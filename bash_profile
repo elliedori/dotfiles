@@ -1,7 +1,7 @@
 #SETUP
 
 # Load the default .profile
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+# [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -22,7 +22,7 @@ fi
 
 # --------------------------------------------------------------------------------------------------------------------- #
 
-#PROMPT CUSTOMIZATION
+# PROMPT CUSTOMIZATION
 
 # A more colorful prompt
 # \[\e[0m\] resets the color to default color
@@ -72,4 +72,4 @@ export GREP_OPTIONS='--color=always'
 # The subl command works through a symlink now, keeping this for reference
 # alias subl="open -a /Applications/Sublime\ Text.app/"
 
-alias co='checkout'
+alias co="checkout"

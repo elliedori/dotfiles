@@ -72,4 +72,4 @@ export GREP_OPTIONS='--color=always'
 # The subl command works through a symlink now, keeping this for reference
 # alias subl="open -a /Applications/Sublime\ Text.app/"
 
-alias co="checkout"
+alias co='checkout'

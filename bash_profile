@@ -1,32 +1,28 @@
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+#SETUP
 
-# echo is like puts for bash (bash is the program running in your terminal)
+# Load the default .profile
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Display user & host info at start of session
 echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
-
-# $VARIABLE will render before the rest of the command is executed
 echo "Logged in as $USER at $(hostname)"
-
-# Load RVM into a shell session *as a function*
-# Path for RVM
-
-# Add RVM to PATH for scripting
-
-# Load RVM into a shell session *as a function*
-
-# Path changes are made non-destructive with PATH=new_path;$PATH   This is like A=A+B so we preserve the old path
-
-# Path order matters, putting /usr/local/bin: before $PATH
-# ensures brew programs will be seen and used before another program
-# of the same name is called
-
-# Path for brew
-test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-# Path for Heroku
-test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 
 # Load git completions
 git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
 test -s $git_completion_script && source $git_completion_script
+
+# Keep SSH agent active between terminal sessions
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+
+# --------------------------------------------------------------------------------------------------------------------- #
+
+#PROMPT CUSTOMIZATION
 
 # A more colorful prompt
 # \[\e[0m\] resets the color to default color
@@ -69,28 +65,11 @@ alias ls='ls -Gh'
 # Force grep to always use the color option and show line numbers
 export GREP_OPTIONS='--color=always'
 
-# Set sublime as the default editor
-which -s subl && export EDITOR="subl --wait"
+# --------------------------------------------------------------------------------------------------------------------- #
 
-function add_pr_remotes() {
-  mv .git/config .git/config-orig
-  awk '/remote "origin"/  {
-    print $0
-    getline;
-    print $0
-    getline;
-    print $0
-    print "\tfetch = +refs/pull/*/head:refs/remotes/origin/pr/*"
-  }1' .git/config-orig > .git/config
-  git fetch origin
-}
+# CUSTOM COMMANDS
 
-#alias for sublime
-#alias subl="open -a /Applications/Sublime\ Text.app/"
+# The subl command works through a symlink now, keeping this for reference
+# alias subl="open -a /Applications/Sublime\ Text.app/"
 
-#alias for ruby mine
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-eval "$(ssh-agent -s > /dev/null)"
-
+alias co="checkout"

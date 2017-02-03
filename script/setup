@@ -4,3 +4,4 @@ DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )/../" && pwd)"
 echo $DIR
 
 ln -s "$DIR/bash_profile" "$HOME/.bash_profile"
+ln -s "$DIR/git_config" "$HOME/.gitconfig"

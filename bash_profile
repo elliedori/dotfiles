@@ -20,6 +20,9 @@ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
 
+# Load ssh key at start of each session
+ssh-add -A &> /dev/null
+
 # --------------------------------------------------------------------------------------------------------------------- #
 
 # PROMPT CUSTOMIZATION

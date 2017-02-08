@@ -6,3 +6,4 @@ echo $DIR
 ln -s "$DIR/bash_profile" "$HOME/.bash_profile"
 ln -s "$DIR/git_config" "$HOME/.gitconfig"
 ln -s "$DIR/tmux.conf" "$HOME/.tmux.conf"
+ln -s "$DIR/rspec" "$HOME/.rspec"

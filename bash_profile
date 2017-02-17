@@ -23,6 +23,9 @@ fi
 # Load ssh key at start of each session
 ssh-add -A &> /dev/null
 
+# marking landing-pages repo as safe
+PATH=".git/safe/../../bin:$PATH"
+
 # --------------------------------------------------------------------------------------------------------------------- #
 
 # PROMPT CUSTOMIZATION

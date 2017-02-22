@@ -3,3 +3,4 @@
 	email = elliedori@gmail.com
 [alias]
 	co = checkout
+	cob = checkout -b

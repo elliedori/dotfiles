@@ -79,3 +79,15 @@ export GREP_OPTIONS='--color=always'
 # alias subl="open -a /Applications/Sublime\ Text.app/"
 
 alias be="bundle exec"
+alias gsl="git stash list"
+alias gsd="git stash drop"
+alias gaa="git add --all"
+alias gcm="git commit -m"
+alias gst="git status"
+alias gdf="git diff"
+alias gbr="git branch"
+alias glo="git log --oneline"
+
+alias pkp="pkill puma"
+alias pku="pkill unicorn"
+

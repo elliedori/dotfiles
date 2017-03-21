@@ -23,7 +23,7 @@ fi
 # Load ssh key at start of each session
 ssh-add -A &> /dev/null
 
-# marking landing-pages repo as safe
+# Mark landing-pages repo as safe
 PATH=".git/safe/../../bin:$PATH"
 
 # --------------------------------------------------------------------------------------------------------------------- #
@@ -45,7 +45,7 @@ PROMPT_COMMAND='PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
 
 export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
 
-# determines if the git branch you are on is clean or dirty
+# Determines if the git branch you are on is clean or dirty
 git_prompt ()
 {
   if ! git rev-parse --git-dir > /dev/null 2>&1; then
@@ -79,6 +79,7 @@ export GREP_OPTIONS='--color=always'
 # alias subl="open -a /Applications/Sublime\ Text.app/"
 
 alias be="bundle exec"
+
 alias gsl="git stash list"
 alias gsd="git stash drop"
 alias gaa="git add --all"
@@ -94,4 +95,3 @@ alias gpo="git push origin"
 
 alias pkp="pkill puma"
 alias pku="pkill unicorn"
-

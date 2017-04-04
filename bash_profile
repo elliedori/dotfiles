@@ -26,6 +26,9 @@ ssh-add -A &> /dev/null
 # Mark landing-pages repo as safe
 PATH=".git/safe/../../bin:$PATH"
 
+# set default editor to Sublime
+export EDITOR=vim
+
 # --------------------------------------------------------------------------------------------------------------------- #
 
 # PROMPT CUSTOMIZATION
@@ -81,7 +84,6 @@ export GREP_OPTIONS='--color=always'
 alias be="bundle exec"
 
 alias gsl="git stash list"
-alias gsd="git stash drop"
 alias gaa="git add --all"
 alias gcm="git commit -m"
 alias gst="git status"

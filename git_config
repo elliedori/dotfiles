@@ -4,3 +4,5 @@
 [alias]
 	co = checkout
 	cob = checkout -b
+[core]
+	hooksPath = /Users/elisabethbahadori/Dev/kufak-git-hooks

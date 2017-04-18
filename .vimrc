@@ -12,4 +12,4 @@ call plug#end()
 " Aliases
 " First arg is what you type, second is the outcome
 
-map <C-n> :NERDTree
+map <C-n> <plug>:NERDTree<CR>

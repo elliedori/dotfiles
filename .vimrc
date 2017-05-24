@@ -32,7 +32,7 @@ set ruler         " Show the cursor position all the time
 set wildmenu      " Make tab completion for files/buffers act like bash
 set showcmd       " Display incomplete commands
 set hidden        " Keep undo history for background buffers
-set autoread      " Autoamically read the file again when it is changed externally
+set autoread      " Automatically read the file again when it is changed externally
 set showtabline=2 " Always show tab bar
 set term=cons25   " Fix issue with arrow keys
 set term=screen-256color

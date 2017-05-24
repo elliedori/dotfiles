@@ -89,6 +89,7 @@ alias be="bundle exec"
 
 alias gsl="git stash list"
 alias gaa="git add --all"
+alias gap="git add --patch"
 alias gcm="git commit -m"
 alias gst="git status"
 alias gdf="git diff"

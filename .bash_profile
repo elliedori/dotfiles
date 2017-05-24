@@ -99,4 +99,6 @@ alias grm="git rebase master"
 alias gco="git checkout"
 alias gpo="git push origin"
 
+alias hb="cd ~/Dev/hellblazer"
+
 run() { cd ~/Dev/kufak-suite; echo "Starting invoker safely..."; pkill puma; pkill unicorn;  invoker start; }

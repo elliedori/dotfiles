@@ -96,13 +96,15 @@ current_branch() {
 
 gpoc() {
   cmd="git push origin `current_branch`"
-  echo "Executing command – $cmd"
+  echo "Executing command..."
+  echo "$cmd"
   eval $cmd
 }
 
 gpoc-f() {
   cmd="git push origin `current_branch` -f"
-  echo "Executing command – $cmd"
+  echo "Executing command..."
+  echo "$cmd"
   eval $cmd
 }
 

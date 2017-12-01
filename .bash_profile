@@ -26,7 +26,7 @@ ssh-add -A &> /dev/null
 # Mark landing-pages repo as safe
 PATH=".git/safe/../../bin:$PATH"
 
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -82,11 +82,18 @@ export GREP_OPTIONS='--color=always'
 
 # CUSTOM COMMANDS
 
+run() {
+  cd ~/Dev/kufak-suite; echo "Starting invoker safely..."; pkill puma; pkill unicorn;  invoker start;
+}
+
+current_branch() {
+  echo `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+}
+
 # The subl command works through a symlink now, keeping this for reference
 # alias subl="open -a /Applications/Sublime\ Text.app/"
 
 alias be="bundle exec"
-
 alias gsl="git stash list"
 alias gaa="git add --all"
 alias gap="git add --patch"
@@ -99,7 +106,10 @@ alias gdb="git branch -D"
 alias grm="git rebase master"
 alias gco="git checkout"
 alias gpo="git push origin"
-
+alias gpoc='git push origin `current_branch`'
 alias hb="cd ~/Dev/hellblazer"
 
-run() { cd ~/Dev/kufak-suite; echo "Starting invoker safely..."; pkill puma; pkill unicorn;  invoker start; }
+
+export GOPATH=/Users/elisabethbahadori/go
+export GOBIN=/bin
+export PATH=:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1/bin:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1@global/bin:/Users/elisabethbahadori/.rvm/rubies/ruby-2.3.1/bin:.git/safe/../../bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elisabethbahadori/.rvm/bin

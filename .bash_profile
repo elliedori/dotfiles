@@ -83,11 +83,21 @@ export GREP_OPTIONS='--color=always'
 # CUSTOM COMMANDS
 
 run() {
-  cd ~/Dev/kufak-suite; echo "Starting invoker safely..."; pkill puma; pkill unicorn;  invoker start;
+  cd ~/Dev/kufak-suite
+  echo "Starting invoker safely..."
+  pkill puma
+  pkill unicorn
+  invoker start
 }
 
 current_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+gpoc() {
+  cmd="git push origin `current_branch`"
+  echo "Executing command – $cmd"
+  eval $cmd
 }
 
 # The subl command works through a symlink now, keeping this for reference
@@ -106,7 +116,6 @@ alias gdb="git branch -D"
 alias grm="git rebase master"
 alias gco="git checkout"
 alias gpo="git push origin"
-alias gpoc="git push origin `current_branch`"
 alias hb="cd ~/Dev/hellblazer"
 
 

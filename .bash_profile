@@ -87,7 +87,7 @@ run() {
 }
 
 current_branch() {
-  echo `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 # The subl command works through a symlink now, keeping this for reference
@@ -106,7 +106,7 @@ alias gdb="git branch -D"
 alias grm="git rebase master"
 alias gco="git checkout"
 alias gpo="git push origin"
-alias gpoc='git push origin `current_branch`'
+alias gpoc="git push origin `current_branch`"
 alias hb="cd ~/Dev/hellblazer"
 
 

@@ -21,8 +21,6 @@ map <Right> :echo "No! Use L"<cr>
 map <Up> :echo "No! Use K"<cr>
 map <Down> :echo "No! Use J"<cr>
 
-map <F1> :!echo % | pbcopy<cr>
-
 " Pretty obvious defaults if you ask me...
   command! W :w
   command! Q :q

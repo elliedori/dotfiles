@@ -7,12 +7,13 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug '907th/vim-auto-save'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 " Aliases
 " First arg is what you type, second is the outcome
 
-map <C-n> <plug>:NERDTree<CR>
+map <C-n> <plug>:NERDTreeTabsToggle<CR>
 
 " ARROW KEYS ARE UNACCEPTABLE
 map <Left> :echo "No! Use H"<cr>
@@ -20,12 +21,19 @@ map <Right> :echo "No! Use L"<cr>
 map <Up> :echo "No! Use K"<cr>
 map <Down> :echo "No! Use J"<cr>
 
+map <F1> :!echo % | pbcopy<cr>
+
 " Pretty obvious defaults if you ask me...
   command! W :w
   command! Q :q
   command! Wq :wq
   command! WQ :wq
 
+" Open NerdTree by default when opening vim
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Set directory for ctags
+set tags=./tags,tags;$HOME
 set number                        " Show line numbers
 set nowrap                        " Turn off text wrap
 set whichwrap+=<,>,[,]            " Back/forward moves across lines

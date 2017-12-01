@@ -100,6 +100,12 @@ gpoc() {
   eval $cmd
 }
 
+gpoc-f() {
+  cmd="git push origin `current_branch` -f"
+  echo "Executing command – $cmd"
+  eval $cmd
+}
+
 # The subl command works through a symlink now, keeping this for reference
 # alias subl="open -a /Applications/Sublime\ Text.app/"
 

@@ -6,6 +6,8 @@
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 # Display user & host info at start of session
 echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
 echo "Logged in as $USER at $(hostname)"
@@ -22,13 +24,6 @@ fi
 
 # Load ssh key at start of each session
 ssh-add -A &> /dev/null
-
-# Mark landing-pages repo as safe
-PATH=".git/safe/../../bin:$PATH"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # set default editor to Sublime
 export EDITOR=vim
@@ -86,7 +81,6 @@ run() {
   cd ~/Dev/kufak-suite
   echo "Starting invoker safely..."
   pkill puma
-  pkill unicorn
   invoker start
 }
 
@@ -125,8 +119,11 @@ alias grm="git rebase master"
 alias gco="git checkout"
 alias gpo="git push origin"
 alias hb="cd ~/Dev/hellblazer"
+alias ref="cd ~/Dev/referrals"
+alias sw="cd ~/Dev/referrals-side-widget"
+alias rvmd="rvm default"
+alias c="clear"
 
+# export PATH=:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1/bin:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1@global/bin:/Users/elisabethbahadori/.rvm/rubies/ruby-2.3.1/bin:.git/safe/../../bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elisabethbahadori/.rvm/bin
 
-export GOPATH=/Users/elisabethbahadori/go
-export GOBIN=/bin
-export PATH=:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1/bin:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1@global/bin:/Users/elisabethbahadori/.rvm/rubies/ruby-2.3.1/bin:.git/safe/../../bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elisabethbahadori/.rvm/bin
+PATH=$PATH:/usr/local/opt/postgresql@9.4/bin

@@ -21,6 +21,7 @@ call plug#end()
 " First arg is what you type, second is the outcome
 
 map <C-n> <plug>:NERDTreeTabsToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 
 " ARROW KEYS ARE UNACCEPTABLE
 map <Left> :echo "No! Use H"<cr>

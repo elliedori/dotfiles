@@ -1,8 +1,8 @@
 [user]
-	name = elliedori
-	email = elliedori@gmail.com
+  name = elliedori
+  email = elliedori@gmail.com
 [alias]
-	co = checkout
-	cob = checkout -b
+  co = checkout
+  cob = checkout -b
 [core]
-	hooksPath = /Users/elisabethbahadori/Dev/git-hooks
+  hooksPath = /Users/elisabethbahadori/Dev/git-hooks

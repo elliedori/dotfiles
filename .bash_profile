@@ -106,9 +106,11 @@ gpoc-f() {
 # alias subl="open -a /Applications/Sublime\ Text.app/"
 
 alias be="bundle exec"
+alias ggo="cd ~/go/src/github.com/stitchfix/"
 alias gsl="git stash list"
 alias gaa="git add --all"
 alias gap="git add --patch"
+alias gca="git commit --amend"
 alias gcm="git commit -m"
 alias gst="git status"
 alias gdf="git diff"
@@ -120,10 +122,28 @@ alias gco="git checkout"
 alias gpo="git push origin"
 alias hb="cd ~/Dev/hellblazer"
 alias ref="cd ~/Dev/referrals"
-alias sw="cd ~/Dev/referrals-side-widget"
 alias rvmd="rvm default"
 alias c="clear"
 
-# export PATH=:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1/bin:/Users/elisabethbahadori/.rvm/gems/ruby-2.3.1@global/bin:/Users/elisabethbahadori/.rvm/rubies/ruby-2.3.1/bin:.git/safe/../../bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/elisabethbahadori/.rvm/bin
+PATH=$PATH:/usr/local/opt/postgresql@9.6/bin
+source ~/.nvm/nvm.sh
 
-PATH=$PATH:/usr/local/opt/postgresql@9.4/bin
+POSTGRESQLPATH="/usr/local/opt/postgresql@9.6/bin"
+POSTGRESQLLDFLAGS="/usr/local/opt/postgresql@9.6/lib"
+POSTGRESQLCPPFLAGS="/usr/local/opt/postgresql@9.6/include"
+
+if [[ -d "$POSTGRESQLPATH" ]]; then
+  export PATH="$POSTGRESQLPATH:$PATH"
+fi
+
+if [[ -d "$POSTGRESQLLDFLAGS" ]]; then
+  export LDFLAGS="-L$POSTGRESQLLDFLAGS $LDFLAGS"
+fi
+
+if [[ -d "$POSTGRESQLCPPFLAGS" ]]; then
+  export CPPFLAGS="-I$POSTGRESQLCPPFLAGS $CPPFLAGS"
+fi
+
+
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH

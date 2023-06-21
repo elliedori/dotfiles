@@ -102,9 +102,6 @@ gpoc-f() {
   eval $cmd
 }
 
-# The subl command works through a symlink now, keeping this for reference
-# alias subl="open -a /Applications/Sublime\ Text.app/"
-
 alias be="bundle exec"
 alias ggo="cd ~/go/src/github.com/stitchfix/"
 alias gsl="git stash list"
@@ -124,26 +121,6 @@ alias hb="cd ~/Dev/hellblazer"
 alias ref="cd ~/Dev/referrals"
 alias rvmd="rvm default"
 alias c="clear"
-
-PATH=$PATH:/usr/local/opt/postgresql@9.6/bin
-source ~/.nvm/nvm.sh
-
-POSTGRESQLPATH="/usr/local/opt/postgresql@9.6/bin"
-POSTGRESQLLDFLAGS="/usr/local/opt/postgresql@9.6/lib"
-POSTGRESQLCPPFLAGS="/usr/local/opt/postgresql@9.6/include"
-
-if [[ -d "$POSTGRESQLPATH" ]]; then
-  export PATH="$POSTGRESQLPATH:$PATH"
-fi
-
-if [[ -d "$POSTGRESQLLDFLAGS" ]]; then
-  export LDFLAGS="-L$POSTGRESQLLDFLAGS $LDFLAGS"
-fi
-
-if [[ -d "$POSTGRESQLCPPFLAGS" ]]; then
-  export CPPFLAGS="-I$POSTGRESQLCPPFLAGS $CPPFLAGS"
-fi
-
 
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH

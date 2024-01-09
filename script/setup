@@ -4,9 +4,6 @@ DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )/../" && pwd)"
 echo $DIR
 
 ln -s "$DIR/.bash_profile" "$HOME/.bash_profile"
+ln -s "$DIR/.bashrc" "$HOME/.bashrc"
 ln -s "$DIR/.gitconfig" "$HOME/.gitconfig"
-ln -s "$DIR/.tmux.conf" "$HOME/.tmux.conf"
-ln -s "$DIR/.rspec" "$HOME/.rspec"
 ln -s "$DIR/.inputrc" "$HOME/.inputrc"
-ln -s "$DIR/.vimrc" "$HOME/.vimrc"
-ln -s "$DIR/.vim_profile" "$HOME/.vim_profile"

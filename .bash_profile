@@ -3,10 +3,7 @@
 # Load the default .profile
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=/opt/homebrew/bin:$PATH
 
 # Display user & host info at start of session
 echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
@@ -25,7 +22,7 @@ fi
 # Load ssh key at start of each session
 ssh-add -A &> /dev/null
 
-# set default editor to Sublime
+# set default editor to Vim
 export EDITOR=vim
 
 # --------------------------------------------------------------------------------------------------------------------- #
@@ -77,13 +74,6 @@ export GREP_OPTIONS='--color=always'
 
 # CUSTOM COMMANDS
 
-run() {
-  cd ~/Dev/kufak-suite
-  echo "Starting invoker safely..."
-  pkill puma
-  invoker start
-}
-
 current_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
@@ -102,8 +92,6 @@ gpoc-f() {
   eval $cmd
 }
 
-alias be="bundle exec"
-alias ggo="cd ~/go/src/github.com/stitchfix/"
 alias gsl="git stash list"
 alias gaa="git add --all"
 alias gap="git add --patch"
@@ -117,10 +105,4 @@ alias gdb="git branch -D"
 alias grm="git rebase master"
 alias gco="git checkout"
 alias gpo="git push origin"
-alias hb="cd ~/Dev/hellblazer"
-alias ref="cd ~/Dev/referrals"
-alias rvmd="rvm default"
 alias c="clear"
-
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH

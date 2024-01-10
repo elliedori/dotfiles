@@ -4,5 +4,5 @@
 [alias]
   co = checkout
   cob = checkout -b
-[core]
-  hooksPath = /Users/elisabethbahadori/Dev/git-hooks
+# [core]
+#   hooksPath = /Users/elisabethbahadori/Dev/git-hooks

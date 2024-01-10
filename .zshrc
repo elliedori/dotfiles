@@ -1,8 +1,11 @@
 # ZSH CONFIG
 export ZSH="${HOME}/.oh-my-zsh"
-ZSH_THEME="bira"
+ZSH_THEME="half-life"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+
+# ENV SETUP
+export PATH=/opt/homebrew/bin:$PATH
 
 # CUSTOM COMMANDS
 current_branch() {

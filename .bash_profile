@@ -25,8 +25,6 @@ ssh-add -A &> /dev/null
 # set default editor to Vim
 export EDITOR=vim
 
-# --------------------------------------------------------------------------------------------------------------------- #
-
 # PROMPT CUSTOMIZATION
 
 # A more colorful prompt
@@ -69,8 +67,6 @@ alias ls='ls -Gh'
 
 # Force grep to always use the color option and show line numbers
 export GREP_OPTIONS='--color=always'
-
---------------------------------------------------------------------------------------------------------------------- #
 
 # CUSTOM COMMANDS
 

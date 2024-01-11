@@ -3,6 +3,8 @@
 DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )/../" && pwd)"
 echo $DIR
 
+rm "$HOME/.bash_profile"
+rm "$HOME/.gitconfig"
 rm "$HOME/.zshrc"
 
 ln -s "$DIR/.bash_profile" "$HOME/.bash_profile"

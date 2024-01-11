@@ -10,4 +10,4 @@ ln -s "$DIR/.gitconfig" "$HOME/.gitconfig"
 ln -s "$DIR/.zshrc" "$HOME/.zshrc"
 
 echo "Installing zsh."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

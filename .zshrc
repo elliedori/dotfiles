@@ -41,3 +41,9 @@ alias grm="git rebase main"
 alias gco="git checkout"
 alias gpo="git push origin"
 alias c="clear"
+
+# WORK ALIASES
+alias watch="make unit-test-watch"
+alias types="make generate-types"
+alias run="make dev-start-web"
+alias story="make dev-storybook"

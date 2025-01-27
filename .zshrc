@@ -6,6 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ENV SETUP
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=~/.local:$PATH
 
 # CUSTOM COMMANDS
 current_branch() {
@@ -44,6 +45,6 @@ alias c="clear"
 
 # WORK ALIASES
 alias watch="make unit-test-watch"
-alias types="make generate-types"
+alias types="turbo generate-types"
 alias run="make dev-start-web"
 alias story="make dev-storybook"

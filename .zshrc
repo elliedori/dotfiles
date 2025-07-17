@@ -51,3 +51,5 @@ alias story="make dev-storybook"
 alias status="scripts/deployments/is_pr_deployed.sh"
 alias status="scripts/deployments/is_pr_deployed.sh"
 alias ext-run="yarn workspace @vanta/qauto-browser-extension run dev --mode"
+
+ENABLE_CLAUDE_CODE=1

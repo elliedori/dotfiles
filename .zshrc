@@ -44,10 +44,10 @@ alias gpo="git push origin"
 alias c="clear"
 
 # WORK ALIASES
-alias watch="make unit-test-watch"
+alias watch="just unit-test-watch"
 alias types="turbo generate-types"
-alias run="make dev-start-web"
-alias story="make dev-storybook"
+alias run="just dev-start-web"
+alias story="just dev-storybook"
 alias status="scripts/deployments/is_pr_deployed.sh"
 alias status="scripts/deployments/is_pr_deployed.sh"
 alias ext-run="yarn workspace @vanta/qauto-browser-extension run dev --mode"

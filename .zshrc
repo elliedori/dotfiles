@@ -9,23 +9,22 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=~/.local:$PATH
 
 # CUSTOM COMMANDS
-current_branch() {
+get_current_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 gpoc() {
-  cmd="git push origin `current_branch`"
   echo "Executing command..."
-  echo "$cmd"
-  eval $cmd
+  echo "git push origin $(get_current_branch)"
+  git push origin "$(get_current_branch)"
 }
 
 gpoc-f() {
-  cmd="git push origin `current_branch` -f"
   echo "Executing command..."
-  echo "$cmd"
-  eval $cmd
+  echo "git push origin $(get_current_branch) -f"
+  git push origin "$(get_current_branch)" -f
 }
+
 
 # ALIASES
 alias gsl="git stash list"
@@ -48,7 +47,6 @@ alias watch="just unit-test-watch"
 alias types="turbo generate-types"
 alias run="just dev-start-web"
 alias story="just dev-storybook"
-alias status="scripts/deployments/is_pr_deployed.sh"
 alias status="scripts/deployments/is_pr_deployed.sh"
 alias ext-run="just workspace @vanta/qauto-browser-extension run dev --mode"
 

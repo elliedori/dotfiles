@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  
+    "permissions": {
+      "allow": [
+        "Read(/workspaces/obsidian/**)",
+        "Edit(/workspaces/obsidian/**)",
+        "Bash(npx eslint *)",
+        "Bash(npx prettier *)",
+        "Bash(just unit-test *)"
+      ],
+      "deny": ["Bash(git commit *)"]
+    }
+  }

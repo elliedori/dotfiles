@@ -25,6 +25,11 @@ gpoc-f() {
   git push origin "$(get_current_branch)" -f
 }
 
+# Local-only config (not committed).
+if [[ -f "${HOME}/.zshrc.local" ]]; then
+  source "${HOME}/.zshrc.local"
+fi
+
 
 # ALIASES
 alias gsl="git stash list"
@@ -42,6 +47,7 @@ alias gco="git checkout"
 alias gpo="git push origin"
 alias c="clear"
 
+
 # WORK ALIASES
 alias watch="just unit-test-watch"
 alias types="turbo generate-types"
@@ -49,5 +55,6 @@ alias run="just dev-start-web"
 alias story="just dev-storybook"
 alias status="scripts/deployments/is_pr_deployed.sh"
 alias ext-run="just workspace @vanta/qauto-browser-extension run dev --mode"
+alias clc="claude --continue"
 
 ENABLE_CLAUDE_CODE=1

@@ -25,6 +25,8 @@ gpoc-f() {
   git push origin "$(get_current_branch)" -f
 }
 
+shh() { lsof -ti:$1 | xargs -r kill -9 }
+
 # Local-only config (not committed).
 if [[ -f "${HOME}/.zshrc.local" ]]; then
   source "${HOME}/.zshrc.local"
@@ -50,8 +52,9 @@ alias c="clear"
 
 # WORK ALIASES
 alias watch="just unit-test-watch"
+alias jp="just pp && turbo generate-types"
 alias types="turbo generate-types"
-alias run="just dev-start-web"
+alias run="just dev-start-qauto"
 alias story="just dev-storybook"
 alias status="scripts/deployments/is_pr_deployed.sh"
 alias ext-run="just workspace @vanta/qauto-browser-extension run dev --mode"
